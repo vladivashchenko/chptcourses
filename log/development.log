@@ -1,0 +1,241 @@
+  [1m[35m (231.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (210.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTeachers (20170402172813)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170402172813"]]
+  [1m[35m (223.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGroups (20170402172839)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "teacher_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_groups_on_teacher_id" ON "groups" ("teacher_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170402172839"]]
+  [1m[35m (281.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStudents (20170402172903)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "birthday" date, "education" varchar, "activated" boolean, "group_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_students_on_group_id" ON "students" ("group_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170402172903"]]
+  [1m[35m (259.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-02 17:34:21 UTC], ["updated_at", 2017-04-02 17:34:21 UTC]]
+  [1m[35m (151.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_on_teacher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_on_teacher_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_group_id' AND type='index'
+[0m
+Started GET "/teachers" for 127.0.0.1 at 2017-04-02 20:38:22 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 4594ms (Views: 4546.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/teachers/new" for 127.0.0.1 at 2017-04-02 20:38:33 +0300
+Processing by TeachersController#new as HTML
+  Rendering teachers/new.html.erb within layouts/application
+  Rendered teachers/_form.html.erb (143.7ms)
+  Rendered teachers/new.html.erb within layouts/application (155.4ms)
+Completed 200 OK in 250ms (Views: 213.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2017-04-02 20:38:38 +0300
+Processing by TeachersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t/ReRPCoCsDS90XFo2Ye+Eh2jHi7IQsGn4ZSUNUrpN4J8HS+2V/8qgolhFIUv8rxqW3nsunLtQtZo6/15nkMbw==", "teacher"=>{"name"=>"Olesya Kots"}, "commit"=>"Create Teacher"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Olesya Kots"], ["created_at", 2017-04-02 17:38:38 UTC], ["updated_at", 2017-04-02 17:38:38 UTC]]
+  [1m[35m (784.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/teachers/1
+Completed 302 Found in 790ms (ActiveRecord: 785.3ms)
+
+
+Started GET "/teachers/1" for 127.0.0.1 at 2017-04-02 20:38:38 +0300
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering teachers/show.html.erb within layouts/application
+  Rendered teachers/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 143ms (Views: 59.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2017-04-02 20:38:41 +0300
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-02 20:38:52 +0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 112ms (Views: 56.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2017-04-02 20:38:55 +0300
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (25.1ms)
+  Rendered students/new.html.erb within layouts/application (35.7ms)
+Completed 200 OK in 126ms (Views: 88.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2017-04-02 20:39:03 +0300
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered groups/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 72ms (Views: 45.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/groups/new" for 127.0.0.1 at 2017-04-02 20:39:04 +0300
+Processing by GroupsController#new as HTML
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/_form.html.erb (2.8ms)
+  Rendered groups/new.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 81ms (Views: 56.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/groups" for 127.0.0.1 at 2017-04-02 20:39:12 +0300
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7SlDprgO+oy++PBL9w1prziRI8GVw1W7YHbb2JsmaRYW+iWHSezgVKA7FimJsEkmZIUtanOYyjJFKwQe2nIgWA==", "group"=>{"name"=>"PS41", "teacher_id"=>"Olesya Kots"}, "commit"=>"Create Group"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/_form.html.erb (3.9ms)
+  Rendered groups/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 110ms (Views: 71.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/groups" for 127.0.0.1 at 2017-04-02 20:39:19 +0300
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DHeG+XFsneGcsbYLmITRYi0gLov36UIwEDH5BAcGMbRVTAph6aTJNOqMmmwgHPekIpQ6mA5JkwcS0UEPFUEVQg==", "group"=>{"name"=>"PS41", "teacher_id"=>"1"}, "commit"=>"Create Group"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "groups" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PS41"], ["teacher_id", 1], ["created_at", 2017-04-02 17:39:19 UTC], ["updated_at", 2017-04-02 17:39:19 UTC]]
+  [1m[35m (162.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/groups/1
+Completed 302 Found in 169ms (ActiveRecord: 163.5ms)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2017-04-02 20:39:19 +0300
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered groups/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 97ms (Views: 48.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2017-04-02 20:39:24 +0300
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered groups/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-02 20:39:38 +0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 68ms (Views: 66.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2017-04-02 20:39:39 +0300
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (14.7ms)
+  Rendered students/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 69ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/students" for 127.0.0.1 at 2017-04-02 20:39:46 +0300
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GwQJ2Tpo/DiRqGeKo1apTvkjezdKXQYaYWPN6saPKlF3YHYZF4D1kMQO47oZzsc/IL6hwooMGziBuUIEWlOOTw==", "student"=>{"name"=>"Vlad Ivashchenko", "birthday(1i)"=>"2017", "birthday(2i)"=>"4", "birthday(3i)"=>"2", "education"=>"CHPT", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (22.9ms)[0m  [1m[32mINSERT INTO "students" ("name", "birthday", "education", "activated", "group_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Vlad Ivashchenko"], ["birthday", Sun, 02 Apr 2017], ["education", "CHPT"], ["activated", true], ["group_id", 1], ["created_at", 2017-04-02 17:39:46 UTC], ["updated_at", 2017-04-02 17:39:46 UTC]]
+  [1m[35m (212.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/1
+Completed 302 Found in 243ms (ActiveRecord: 235.6ms)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2017-04-02 20:39:46 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 94ms (Views: 53.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students/1/edit" for 127.0.0.1 at 2017-04-02 20:39:57 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (5.6ms)
+  Rendered students/edit.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 71ms (Views: 58.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/students/1" for 127.0.0.1 at 2017-04-02 20:40:01 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2akR9Sv08521klTwquHTaeBeq1HZl3D/6KorugJ/Iujj3rGN2FINzC5qJbPxMgLZLg2SyCik2LimVGzCnm5zVQ==", "student"=>{"name"=>"Vlad Ivashchenko", "birthday(1i)"=>"2017", "birthday(2i)"=>"4", "birthday(3i)"=>"2", "education"=>"CHPT", "activated"=>"1", "group_id"=>"PS41"}, "commit"=>"Update Student", "id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (8.4ms)
+  Rendered students/edit.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 73ms (Views: 67.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/students/1" for 127.0.0.1 at 2017-04-02 20:40:05 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3qtF7wu2p38PYeXY29deK+FuMlroBRR3zWVZpEC5AkyHkMl3k37zqnlcyb9jT3jt7tomSRGlxUDPheGvUv4mug==", "student"=>{"name"=>"Vlad Ivashchenko", "birthday(1i)"=>"2017", "birthday(2i)"=>"4", "birthday(3i)"=>"2", "education"=>"CHPT", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Update Student", "id"=>"1"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/1
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2017-04-02 20:40:05 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 62ms (Views: 59.6ms | ActiveRecord: 0.4ms)
+
+

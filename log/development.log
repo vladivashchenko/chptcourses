@@ -1085,3 +1085,66 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 5943ms (Views: 5825.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-04-03 22:02:57 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (15995.5ms)
+  Rendered static_pages/home.html.erb within layouts/application (16011.5ms)
+Completed 200 OK in 16453ms (Views: 16405.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-04-03 22:05:36 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (375.3ms)
+Completed 200 OK in 2132ms (Views: 1368.6ms | ActiveRecord: 65.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-03 22:07:36 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 208ms (Views: 204.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-03 22:07:45 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (0.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 99ms (Views: 78.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-03 22:13:34 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (11.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 1138ms (Views: 1045.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-03 22:14:12 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (0.9ms)
+  Rendered static_pages/home.html.erb within layouts/application (152.9ms)
+Completed 200 OK in 343ms (Views: 283.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-03 22:14:33 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (8.5ms)
+  Rendered static_pages/home.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 531ms (Views: 529.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-03 22:14:49 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (26.1ms)
+  Rendered static_pages/home.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 264ms (Views: 263.0ms | ActiveRecord: 0.0ms)
+
+

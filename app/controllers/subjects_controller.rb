@@ -1,7 +1,6 @@
 class SubjectsController < ApplicationController
-  before_action :set_subject, only: [:show, :edit, :update, :destroy]
-
-  # GET /subjects
+before_action :require_user, only: [:index,:show]
+# GET /subjects
   # GET /subjects.json
   def index
     @subjects = Subject.all

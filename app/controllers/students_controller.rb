@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
-
+before_action :require_user, only: [:index,:show]
   # GET /students
   # GET /students.json
   def index

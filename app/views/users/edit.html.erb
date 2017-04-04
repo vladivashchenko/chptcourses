@@ -1,12 +1,12 @@
-<% provide(:title, 'Edit user') %>
-<% provide(:button_text, 'Save changes') %>
+<% provide(:title, 'Редагувати користувача') %>
+<% provide(:button_text, 'Зберегти зміни') %>
 <h1>Update your profile</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= render 'form' %>
     <div class="gravatar_edit">
       <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">Change</a>
+      <a href="http://gravatar.com/emails" target="_blank">Змінити</a>
     </div>
   </div>
 </div>

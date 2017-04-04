@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <title>Підготовчі курси ЧПТ></title>
-    <%=favicon_link_tag 'logo.png'%>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
+  </head>
   <body>
-    <div class="header">
+      <%= render 'layouts/header' %>
       <div class="container">
-        <%= link_to root_path do %>
-        <%=image_tag ("logo.png")%>
-        <% end %>
-        <div class="nav">
-          <% if current_user %>
-          <ul>
-          <li><%= current_user.email %></li>
-          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-          </ul>
-          <% else %>
-          <ul>
-          <li><%= link_to "Login", 'login' %></a></li>
-          <li><%= link_to "Signup", 'signup' %></a></li>
-          </ul>
-          <% end %>
-    </div>
-  </div>
-</div>
-
-    <%= yield %>
-
-  </body>
-</html>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+      </div>
+    </body>
+  </html>

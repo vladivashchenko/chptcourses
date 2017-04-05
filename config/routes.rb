@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get     '/students',   to: 'students#index'
   get     '/teachers',   to: 'teachers#index'
   get     '/subjects',   to: 'subjects#index'
+  resources :account_activations, only: [:edit]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

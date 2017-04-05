@@ -6,7 +6,7 @@
         <li><%= link_to "Дім", root_path %></li>
         <li><%= link_to "Допомога", help_path %></li>
         <% if logged_in? %>
-          <% if current_user.admin? && !current_user?(user) %>
+          <% if current_user.admin?%>
                   <li><%= link_to "Користувачі", users_path %></li>
           <% else %>
                   <li><%= link_to "Кабінет", user_path(current_user) %></li>

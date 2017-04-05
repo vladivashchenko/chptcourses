@@ -42,6 +42,20 @@ class UsersController < ApplicationController
     flash[:success] = "User deleted"
     redirect_to users_url
   end
+  def deactivate
+  user = User.find(params[:id])
+  if current_user.admin?
+    user.deactivate_account
+    redirect_to users_url
+  end
+  end
+  def activate
+  user = User.find(params[:id])
+  if current_user.admin?
+    user.activate_account
+    redirect_to users_url
+  end
+  end
   private
 
       def user_params

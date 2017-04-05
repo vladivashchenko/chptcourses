@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   get     '/teachers',   to: 'teachers#index'
   get     '/subjects',   to: 'subjects#index'
   resources :account_activations, only: [:edit]
+  put 'deactivate/:id(.:format)', :to => 'users#deactivate', :as => :deactivate_user
+  put 'activate/:id(.:format)', :to => 'users#activate', :as => :activate_user
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

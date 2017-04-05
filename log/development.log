@@ -3512,3 +3512,116 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 83ms (Views: 80.3ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-04-05 16:04:45 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (4898.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (4905.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 5314ms (Views: 5139.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-04-05 16:04:55 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.2ms)
+  Rendered users/_form.html.erb (818.6ms)
+  Rendered users/new.html.erb within layouts/application (842.2ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 1042ms (Views: 936.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-05 16:05:03 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (23.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 137ms (Views: 115.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-04-05 16:05:11 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6iK+xnsS3Gl5ehhGY8bQTg0PztxL+cSPGQ53vEYsAo4CVJiJkMIh7bsUCW1YCW5zzD4+FqzepHZt/sVWufjxyw==", "session"=>{"email"=>"vladviva16@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (13.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vladviva16@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (34.3ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$IBC.NcFSBF1prtJpzB7yQO.Ui9MrSI0Y61/2Wjx/bQcc.MMAkpqem"], ["updated_at", 2017-04-05 13:05:11 UTC], ["id", 101]]
+  [1m[35m (60.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/101
+Completed 302 Found in 310ms (ActiveRecord: 108.6ms)
+
+
+Started GET "/users/101" for 127.0.0.1 at 2017-04-05 16:05:11 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 95ms (Views: 74.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-04-05 16:05:25 +0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wGvsz+OTjtwrIZsHxtn8QuiqAyumnITrOMBdjo/gQysoHcqACENzWOlPiiz9FkJ/KZvz4UG75BJMMO9kcDSwbg=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", 2017-04-05 13:05:25 UTC], ["id", 101]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-05 16:05:25 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (1.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 120ms (Views: 102.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-05 16:08:04 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (16.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 212ms (Views: 194.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-05 16:09:48 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (29.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (63.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (16.3ms)
+Completed 200 OK in 427ms (Views: 379.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-05 16:11:58 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (2.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (14.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 83ms (Views: 81.8ms | ActiveRecord: 0.0ms)
+
+

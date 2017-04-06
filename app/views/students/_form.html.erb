@@ -25,12 +25,12 @@
     <%= f.label :education %>
     <%= f.text_field :education %>
   </div>
-
+<% if current_user.admin?%>
   <div class="field">
     <%= f.label :activated %>
     <%= f.check_box :activated %>
   </div>
-
+<%end%>
   <div class="field">
     <%= f.label :group_id %>
     <%= f.text_field :group_id %>

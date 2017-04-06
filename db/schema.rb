@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405083553) do
+ActiveRecord::Schema.define(version: 20170406214324) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
@@ -55,6 +55,10 @@ ActiveRecord::Schema.define(version: 20170405083553) do
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
     t.boolean  "admin",             default: false
+    t.date     "birthday"
+    t.string   "education"
+    t.integer  "group_id"
+    t.index ["group_id"], name: "index_users_on_group_id"
   end
 
 end

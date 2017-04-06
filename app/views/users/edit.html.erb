@@ -20,7 +20,9 @@
 
       <%= f.submit "Зберегти зміни", class: "btn btn-primary" %>
     <% end %>
-
+<%      if @user.activated?%>
+<%= link_to "Налаштувати профіль студента",student_path %>
+  <% end %>
     <div class="gravatar_edit">
       <%= gravatar_for @user %>
       <a href="http://gravatar.com/emails" target="_blank">change</a>

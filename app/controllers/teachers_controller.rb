@@ -1,5 +1,4 @@
 class TeachersController < ApplicationController
-before_action :require_user, only: [:index,:show]
   # GET /teachers
   # GET /teachers.json
   def index
@@ -9,6 +8,7 @@ before_action :require_user, only: [:index,:show]
   # GET /teachers/1
   # GET /teachers/1.json
   def show
+    @teacher = Teacher.find(params[:id])
   end
 
   # GET /teachers/new
@@ -18,6 +18,7 @@ before_action :require_user, only: [:index,:show]
 
   # GET /teachers/1/edit
   def edit
+    @teacher = Teacher.find(params[:id])
   end
 
   # POST /teachers
@@ -39,6 +40,7 @@ before_action :require_user, only: [:index,:show]
   # PATCH/PUT /teachers/1
   # PATCH/PUT /teachers/1.json
   def update
+    @teacher = Teacher.find(params[:id])
     respond_to do |format|
       if @teacher.update(teacher_params)
         format.html { redirect_to @teacher, notice: 'Teacher was successfully updated.' }
@@ -53,6 +55,7 @@ before_action :require_user, only: [:index,:show]
   # DELETE /teachers/1
   # DELETE /teachers/1.json
   def destroy
+    @teacher = Teacher.find(params[:id])
     @teacher.destroy
     respond_to do |format|
       format.html { redirect_to teachers_url, notice: 'Teacher was successfully destroyed.' }
@@ -61,12 +64,7 @@ before_action :require_user, only: [:index,:show]
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_teacher
-      @teacher = Teacher.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+        # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
       params.require(:teacher).permit(:name)
     end

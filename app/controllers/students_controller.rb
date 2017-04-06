@@ -1,5 +1,4 @@
 class StudentsController < ApplicationController
-before_action :require_user, only: [:index,:show]
   # GET /students
   # GET /students.json
   def index
@@ -9,6 +8,7 @@ before_action :require_user, only: [:index,:show]
   # GET /students/1
   # GET /students/1.json
   def show
+    @student = Student.find(params[:id])
   end
 
   # GET /students/new
@@ -18,13 +18,13 @@ before_action :require_user, only: [:index,:show]
 
   # GET /students/1/edit
   def edit
+    @student = Student.find(params[:id])
   end
 
   # POST /students
   # POST /students.json
   def create
     @student = Student.new(student_params)
-
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
@@ -39,6 +39,7 @@ before_action :require_user, only: [:index,:show]
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
+    @student = Student.find(params[:id])
     respond_to do |format|
       if @student.update(student_params)
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
@@ -53,6 +54,7 @@ before_action :require_user, only: [:index,:show]
   # DELETE /students/1
   # DELETE /students/1.json
   def destroy
+    @student = Student.find(params[:id])
     @student.destroy
     respond_to do |format|
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }

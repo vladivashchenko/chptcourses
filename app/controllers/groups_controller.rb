@@ -1,6 +1,4 @@
 class GroupsController < ApplicationController
-before_action :require_user, only: [:index,:show]
-
   # GET /groups
   # GET /groups.json
   def index
@@ -10,6 +8,7 @@ before_action :require_user, only: [:index,:show]
   # GET /groups/1
   # GET /groups/1.json
   def show
+    @group = Group.find(params[:id])
   end
 
   # GET /groups/new
@@ -19,6 +18,7 @@ before_action :require_user, only: [:index,:show]
 
   # GET /groups/1/edit
   def edit
+    @group = Group.find(params[:id])
   end
 
   # POST /groups
@@ -40,6 +40,7 @@ before_action :require_user, only: [:index,:show]
   # PATCH/PUT /groups/1
   # PATCH/PUT /groups/1.json
   def update
+    @group = Group.find(params[:id])
     respond_to do |format|
       if @group.update(group_params)
         format.html { redirect_to @group, notice: 'Group was successfully updated.' }
@@ -54,6 +55,7 @@ before_action :require_user, only: [:index,:show]
   # DELETE /groups/1
   # DELETE /groups/1.json
   def destroy
+    @group = Group.find(params[:id])
     @group.destroy
     respond_to do |format|
       format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }

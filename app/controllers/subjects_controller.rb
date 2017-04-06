@@ -1,6 +1,5 @@
 class SubjectsController < ApplicationController
-before_action :require_user, only: [:index,:show]
-# GET /subjects
+  # GET /subjects
   # GET /subjects.json
   def index
     @subjects = Subject.all
@@ -9,6 +8,7 @@ before_action :require_user, only: [:index,:show]
   # GET /subjects/1
   # GET /subjects/1.json
   def show
+    @subject = Subject.find(params[:id])
   end
 
   # GET /subjects/new
@@ -18,6 +18,7 @@ before_action :require_user, only: [:index,:show]
 
   # GET /subjects/1/edit
   def edit
+    @subject = Subject.find(params[:id])
   end
 
   # POST /subjects
@@ -39,6 +40,7 @@ before_action :require_user, only: [:index,:show]
   # PATCH/PUT /subjects/1
   # PATCH/PUT /subjects/1.json
   def update
+    @subject = Subject.find(params[:id])
     respond_to do |format|
       if @subject.update(subject_params)
         format.html { redirect_to @subject, notice: 'Subject was successfully updated.' }
@@ -53,6 +55,7 @@ before_action :require_user, only: [:index,:show]
   # DELETE /subjects/1
   # DELETE /subjects/1.json
   def destroy
+    @subject = Subject.find(params[:id])
     @subject.destroy
     respond_to do |format|
       format.html { redirect_to subjects_url, notice: 'Subject was successfully destroyed.' }
@@ -61,12 +64,7 @@ before_action :require_user, only: [:index,:show]
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_subject
-      @subject = Subject.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+        # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
       params.require(:subject).permit(:name, :hour)
     end

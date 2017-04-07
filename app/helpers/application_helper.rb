@@ -9,4 +9,10 @@ module ApplicationHelper
       page_title + " | " + base_title                 # String concatenation
     end
   end
+  def unactivated_users
+    @unactivated_users = User.where(activated: false).count
+  end
+  def  activated_users
+    @activated_users = User.where(activated: true, admin: false).count
+  end
 end

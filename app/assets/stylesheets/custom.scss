@@ -4,7 +4,9 @@
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
-
+.blue{
+  background-color: #28a4c9;
+}
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;

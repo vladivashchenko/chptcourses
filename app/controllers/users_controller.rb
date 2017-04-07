@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     before_action :admin_user,     only: :destroy
 
   def index
-      @users = User.paginate(page: params[:page])
+      @users = User.where(activated: false).paginate(page: params[:page])
     end
   def show
     @user = User.find(params[:id])
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = "Користувача видалено"
     redirect_to users_url
   end
   def deactivate
@@ -69,7 +69,7 @@ class UsersController < ApplicationController
       def logged_in_user
         unless logged_in?
           store_location
-          flash[:danger] = "Please log in."
+          flash[:danger] = "Будь ласка, увійдіть в обліковий запис."
           redirect_to login_url
         end
       end

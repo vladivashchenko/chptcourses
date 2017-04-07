@@ -1,28 +1,25 @@
 <% provide(:title, "Редагувати користувача") %>
-<h1>Обновіть ваш профіль</h1>
+<h1>Оновіть ваш профіль</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "Ім'я" %>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
+      <%= f.label :email, "Пошта" %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
+      <%= f.label :password, "Пароль" %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "Підтвердження пароля" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Зберегти зміни", class: "btn btn-primary" %>
     <% end %>
-<%      if @user.activated?%>
-<%= link_to "Налаштувати профіль студента",student_path %>
-  <% end %>
     <div class="gravatar_edit">
       <%= gravatar_for @user %>
       <a href="http://gravatar.com/emails" target="_blank">change</a>

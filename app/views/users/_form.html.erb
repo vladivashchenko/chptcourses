@@ -1,16 +1,16 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: @user %>
 
-  <%= f.label :name %>
+  <%= f.label :name, "Ім'я" %>
   <%= f.text_field :name, class: 'form-control', placeholder: "Ім'я"  %>
 
-  <%= f.label :email %>
+  <%= f.label :email, "Пошта" %>
   <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
 
-  <%= f.label :password %>
+  <%= f.label :password, "Пароль" %>
   <%= f.password_field :password, class: 'form-control', placeholder: "Пароль" %>
 
-  <%= f.label :password_confirmation %>
+  <%= f.label :password_confirmation, "Підтвердження пароля" %>
   <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Підтвердження пароля" %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>

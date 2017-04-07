@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name, "Ім'я"%>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :birthday %>
+    <%= f.label :birthday, "День народження" %>
     <%= f.date_select :birthday %>
   </div>
 
   <div class="field">
-    <%= f.label :education %>
+    <%= f.label :education, "Навчальний заклад" %>
     <%= f.text_field :education %>
   </div>
 <% if current_user.admin?%>
   <div class="field">
-    <%= f.label :activated %>
+    <%= f.label :activated, "Активований"%>
     <%= f.check_box :activated %>
   </div>
-<%end%>
+
   <div class="field">
-    <%= f.label :group_id %>
+    <%= f.label :group_id, "Група" %>
     <%= f.text_field :group_id %>
   </div>
-
+<%end%>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Підтвердити", class: "btn btn-primary" %>
   </div>
 <% end %>

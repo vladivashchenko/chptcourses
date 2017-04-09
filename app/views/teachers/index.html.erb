@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Teachers</h1>
+<h1>Вчителі</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>ПІБ</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
     <% @teachers.each do |teacher| %>
       <tr>
         <td><%= teacher.name %></td>
-        <td><%= link_to 'Show', teacher %></td>
-        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Показати', teacher %></td>
+        <td><%= link_to 'Редагувати', edit_teacher_path(teacher) %></td>
+        <td><%= link_to 'Видалити', teacher, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Teacher', new_teacher_path %>
+<%= link_to 'Додати вчителя', new_teacher_path %>

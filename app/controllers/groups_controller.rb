@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :admin_user, only: [:index,:edit, :update,:destroy]
   # GET /groups
   # GET /groups.json
   def index

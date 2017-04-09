@@ -10,18 +10,16 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+        <%= f.label :name , "Предмет" %>
+        <%= f.text_field :name,class:"form-control" %>
 
-  <div class="field">
-    <%= f.label :hour %>
-    <%= f.number_field :hour %>
-  </div>
+        <%= f.label :hour, "Години" %>
+        <%= f.number_field :hour,class:"form-control" %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+        <%= f.submit "Підтвердити", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>

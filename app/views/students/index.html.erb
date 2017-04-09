@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Students</h1>
+<h1>Студенти</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Ім'я</th>
@@ -24,10 +24,8 @@
         <td><%= student.group_id %></td>
         <td><%= link_to 'Показати', student %></td>
         <td><%= link_to 'Редагувати', edit_student_path(student) %></td>
-        <td><%= link_to 'Видалити', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Видалити', student, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>

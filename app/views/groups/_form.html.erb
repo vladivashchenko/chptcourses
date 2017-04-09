@@ -10,18 +10,15 @@
       </ul>
     </div>
   <% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+        <%= f.label :name, "Назва групи"%>
+        <%= f.text_field :name,class:"form-control" %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+        <%= f.label :teacher_id , "Вчитель"%>
+        <%= f.text_field :teacher_id,class:"form-control" %>
 
-  <div class="field">
-    <%= f.label :teacher_id %>
-    <%= f.text_field :teacher_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+        <%= f.submit "Підтвердити", class: "btn btn-primary" %>
+    </div>
+</div>
 <% end %>

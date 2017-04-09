@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Оцінка:</strong>
+  <%= @mark.mark %>
+</p>
+
+<p>
+  <strong>Студент:</strong>
+  <%= @mark.student.name %>
+</p>
+
+<p>
+  <strong>Предмет:</strong>
+  <%= @mark.subject.name %>
+</p>
+<%if current_user.admin?%>
+<%= link_to 'Редагувати', edit_mark_path(@mark) %>
+<% end %>
+<%= link_to 'Назад', marks_path %>

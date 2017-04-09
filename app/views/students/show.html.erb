@@ -2,12 +2,17 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
+<% if current_user.activated?%>
       <h1>
         <%= gravatar_for current_user %>
-        <%= @student.name %>
-         <%= link_to 'налаштувати',  edit_student_path(@student) %>
+        <p><%= @student.name %></p>
+        <p><%= @student.group.name %></p>
+        <%= link_to 'налаштувати',  edit_student_path(@student) %>
       </h1>
     </section>
   </aside>
 </div>
+<% else%>
+<h2>Ваша заявка оброблюється. Ви ще не маєте доступу до профіля студента </h2>
 <%= link_to 'На головну', root_path %>
+<%end%>

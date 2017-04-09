@@ -10,33 +10,24 @@
       </ul>
     </div>
   <% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+        <%= f.label :name, "Ім'я"%>
+        <%= f.text_field :name,class:"form-control" %>
 
-  <div class="field">
-    <%= f.label :name, "Ім'я"%>
-    <%= f.text_field :name %>
-  </div>
+        <%= f.label :birthday, "День народження" %>
+        <%= f.date_select :birthday,class:"form-control" %>
 
-  <div class="field">
-    <%= f.label :birthday, "День народження" %>
-    <%= f.date_select :birthday %>
-  </div>
+        <%= f.label :education, "Навчальний заклад" %>
+        <%= f.text_field :education,class:"form-control" %>
+    <% if current_user.admin?%>
+        <%= f.label :activated, "Активований"%>
+        <%= f.check_box :activated,class:"form-control" %>
 
-  <div class="field">
-    <%= f.label :education, "Навчальний заклад" %>
-    <%= f.text_field :education %>
-  </div>
-<% if current_user.admin?%>
-  <div class="field">
-    <%= f.label :activated, "Активований"%>
-    <%= f.check_box :activated %>
-  </div>
-
-  <div class="field">
-    <%= f.label :group_id, "Група" %>
-    <%= f.text_field :group_id %>
-  </div>
-<%end%>
-  <div class="actions">
-    <%= f.submit "Підтвердити", class: "btn btn-primary" %>
-  </div>
-<% end %>
+        <%= f.label :group_id, "Група" %>
+        <%= f.text_field :group_id,class:"form-control" %>
+    <%end%>
+        <%= f.submit "Підтвердити", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>

@@ -1,8 +1,12 @@
 class StudentsController < ApplicationController
+  before_action :logged_in_user, only: [:index, :edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
+  before_action :admin_user, only: [:destroy]
   # GET /students
   # GET /students.json
   def index
-    @students = Student.where(activated: true,admin: false)
+  @students = Student.where(activated: true,admin: false)
+  redirect_to(root_url) unless current_user.admin?
   end
 
   # GET /students/1

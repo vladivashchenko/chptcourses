@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
+<h1>Групи</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Teacher</th>
+      <th>Назва групи</th>
+      <th>Вчитель</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= group.name %></td>
         <td><%= group.teacher.name %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Показати', group %></td>
+        <td><%= link_to 'Редагувати', edit_group_path(group) %></td>
+        <td><%= link_to 'Видалити', group, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Group', new_group_path %>
+<%= link_to 'Створити групу', new_group_path %>

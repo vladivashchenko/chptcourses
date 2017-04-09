@@ -1,4 +1,5 @@
 class SubjectsController < ApplicationController
+  before_action :admin_user, only: [:index,:edit, :update,:destroy]
   # GET /subjects
   # GET /subjects.json
   def index

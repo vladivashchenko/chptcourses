@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+  before_action :admin_user, only: [:index,:edit, :update,:destroy]
   # GET /teachers
   # GET /teachers.json
   def index

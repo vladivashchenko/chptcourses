@@ -1,4 +1,5 @@
-User.create!(name:  "Vlad Ivashchenko",
+User.create!(id: 1,
+            name:  "Vlad Ivashchenko",
              email: "vladviva16@gmail.com",
              password:              "123456",
              password_confirmation: "123456",

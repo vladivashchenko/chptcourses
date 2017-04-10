@@ -29194,3 +29194,1348 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 491ms (Views: 489.9ms | ActiveRecord: 0.1ms)
 
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Started GET "/" for 127.0.0.1 at 2017-04-10 11:24:48 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (3670.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (3683.6ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 3804ms (Views: 3792.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-04-10 11:25:07 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (49.5ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 125ms (Views: 100.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-04-10 11:25:37 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rXvvTQN8UWcBMWfvevNKWB9T++WiDh+cwr9tTpYx05E1bd+LhZ7LjthlZ4gU9ZQDWPltRJEHUOmG2VDuWoUmSQ==", "session"=>{"email"=>"vladviva16@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Увійти"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vladviva16@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 256ms (Views: 31.8ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-04-10 11:25:54 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U9R/ZeqtJptpYvzClX0Ygb2ChR3klHhjSEOAc872RFfLwk+jbE+8crA2/KX7e8ba+igTvNedNxYMJb3TAkKxjw==", "session"=>{"email"=>"vladviva16@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Увійти"}
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vladviva16@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 77ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-04-10 11:25:54 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 49ms (Views: 39.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-04-10 11:26:07 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", false], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered users/_user.html.erb (3.7ms)
+  Rendered users/index.html.erb within layouts/application (39.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 123ms (Views: 94.2ms | ActiveRecord: 1.6ms)
+
+
+Started PUT "/activate/5" for 127.0.0.1 at 2017-04-10 11:26:13 +0300
+Processing by UsersController#activate as HTML
+  Parameters: {"authenticity_token"=>"6qoSF7x1uM3diM+p48CFPzG3NUyc0tBhilazPZBA3JFyvCLROpciJATcz86Nxltkdh2j7a/bnxTOMI6dXPQpSQ==", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "activated" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["activated", true], ["updated_at", 2017-04-10 08:26:13 UTC], ["id", 5]]
+  [1m[35m (81.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "activated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", 2017-04-10 08:26:13 UTC], ["activated_at", 2017-04-10 08:26:13 UTC], ["id", 5]]
+  [1m[35m (53.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 151ms (ActiveRecord: 136.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-04-10 11:26:13 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", false], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered users/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 62ms (Views: 56.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:26:16 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 80ms (Views: 44.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/students/5/edit" for 127.0.0.1 at 2017-04-10 11:26:20 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (313.8ms)
+  Rendered students/edit.html.erb within layouts/application (319.5ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 387ms (Views: 376.0ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/students/5" for 127.0.0.1 at 2017-04-10 11:26:24 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FujmMld1SaNiPdkt4OsmfxAVfDPruVJLjb/wErr4tBKO/tb00ZfTSrtp2UqO7fgkV7/qktiwHT7J2c2ydkxByg==", "student"=>{"name"=>"bla bla", "birthday(1i)"=>"2017", "birthday(2i)"=>"4", "birthday(3i)"=>"10", "education"=>"", "activated"=>"0", "group_id"=>""}, "commit"=>"Підтвердити", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "bla@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (3.0ms)
+  Rendered students/edit.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 85ms (Views: 61.4ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/students/5" for 127.0.0.1 at 2017-04-10 11:26:29 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NqimJV1Ym0cJ1vxhIY3ZxfK/Dv8CAu0BgBxl5BNA3OCuvpbj27oBrtCC/AZPiweetRWYXjELonTEelhE3/QpOA==", "student"=>{"name"=>"bla bla", "birthday(1i)"=>"2017", "birthday(2i)"=>"4", "birthday(3i)"=>"10", "education"=>"", "activated"=>"0", "group_id"=>"1"}, "commit"=>"Підтвердити", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "bla@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "education" = ?, "activated" = ?, "group_id" = ?, "birthday" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["education", ""], ["activated", false], ["group_id", 1], ["birthday", Mon, 10 Apr 2017], ["updated_at", 2017-04-10 08:26:29 UTC], ["id", 5]]
+  [1m[35m (46.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/5
+Completed 302 Found in 67ms (ActiveRecord: 48.9ms)
+
+
+Started GET "/students/5" for 127.0.0.1 at 2017-04-10 11:26:29 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 66.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-04-10 11:26:31 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", false], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered users/_user.html.erb (3.1ms)
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 59ms (Views: 50.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/5" for 127.0.0.1 at 2017-04-10 11:26:40 +0300
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u8QM38a2ab39CR9SQTuNdHTgYlwtUAIH9VskBLdsS5Aj0jwZQFTzVCRdHzUvPVMvM0r0/R5ZTXKxPRmke9i+SA==", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[35m (60.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 66ms (ActiveRecord: 60.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-04-10 11:26:40 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", false], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 53ms (Views: 46.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:26:45 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2017-04-10 11:26:47 +0300
+Processing by TeachersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 74ms (Views: 53.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2017-04-10 11:26:51 +0300
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered groups/index.html.erb within layouts/application (15.1ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 90ms (Views: 65.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/marks" for 127.0.0.1 at 2017-04-10 11:26:54 +0300
+Processing by MarksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering marks/index.html.erb within layouts/application
+  [1m[36mMark Load (0.1ms)[0m  [1m[34mSELECT "marks".* FROM "marks"[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered marks/index.html.erb within layouts/application (20.0ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 54ms (Views: 49.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/marks/1" for 127.0.0.1 at 2017-04-10 11:26:58 +0300
+Processing by MarksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMark Load (0.3ms)[0m  [1m[34mSELECT  "marks".* FROM "marks" WHERE "marks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering marks/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered marks/show.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 59ms (Views: 51.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/marks" for 127.0.0.1 at 2017-04-10 11:27:00 +0300
+Processing by MarksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering marks/index.html.erb within layouts/application
+  [1m[36mMark Load (0.3ms)[0m  [1m[34mSELECT "marks".* FROM "marks"[0m
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered marks/index.html.erb within layouts/application (24.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 82ms (Views: 73.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:27:04 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 84ms (Views: 69.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/students/3" for 127.0.0.1 at 2017-04-10 11:27:07 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     6:       <h1>
+     7:         <%= gravatar_for current_user %>
+     8:         <p><%= @student.name %></p>
+     9:         <p><%= @student.group.name %></p>
+    10:         <%= link_to 'налаштувати',  edit_student_path(@student) %>
+    11:       </h1>
+    12:     </section>
+  
+app/views/students/show.html.erb:9:in `_app_views_students_show_html_erb__4265623771358703151_70049143075900'
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.2ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from status_code_with_paginate at /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/will_paginate-3.1.0/lib/will_paginate/railtie.rb:49)
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:27:10 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students/3/edit" for 127.0.0.1 at 2017-04-10 11:27:12 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (2.5ms)
+  Rendered students/edit.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/students/3" for 127.0.0.1 at 2017-04-10 11:27:29 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NYXtW0Wm4U+1gQnqnXdk7wU5S1iMg8j4sKFc5YelZZetk92dw0R7pmzVCY3zcbq0QpPd+b+Kh430x2FFSxGQTw==", "student"=>{"name"=>"Max Kozoriz", "birthday(1i)"=>"2017", "birthday(2i)"=>"4", "birthday(3i)"=>"10", "education"=>"CHPT", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Підтвердити", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "max_kozoriz@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "users" SET "education" = ?, "group_id" = ?, "birthday" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["education", "CHPT"], ["group_id", 1], ["birthday", Mon, 10 Apr 2017], ["updated_at", 2017-04-10 08:27:29 UTC], ["id", 3]]
+  [1m[35m (60.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/3
+Completed 302 Found in 73ms (ActiveRecord: 63.3ms)
+
+
+Started GET "/students/3" for 127.0.0.1 at 2017-04-10 11:27:29 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 57ms (Views: 50.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/students/3/edit" for 127.0.0.1 at 2017-04-10 11:27:32 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (6.8ms)
+  Rendered students/edit.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 71ms (Views: 60.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:27:34 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 79ms (Views: 71.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/students/3/edit" for 127.0.0.1 at 2017-04-10 11:27:43 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (3.9ms)
+  Rendered students/edit.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:29:45 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 48ms (Views: 34.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/students/4" for 127.0.0.1 at 2017-04-10 11:29:47 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     6:       <h1>
+     7:         <%= gravatar_for current_user %>
+     8:         <p><%= @student.name %></p>
+     9:         <p><%= @student.group.name %></p>
+    10:         <%= link_to 'налаштувати',  edit_student_path(@student) %>
+    11:       </h1>
+    12:     </section>
+  
+app/views/students/show.html.erb:9:in `_app_views_students_show_html_erb__4265623771358703151_70049140634100'
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.1ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from status_code_with_paginate at /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/will_paginate-3.1.0/lib/will_paginate/railtie.rb:49)
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:29:51 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:29:54 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 49ms (Views: 40.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:29:54 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 54ms (Views: 46.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:29:55 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 54ms (Views: 48.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/students/4" for 127.0.0.1 at 2017-04-10 11:29:56 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     6:       <h1>
+     7:         <%= gravatar_for current_user %>
+     8:         <p><%= @student.name %></p>
+     9:         <p><%= @student.group.name %></p>
+    10:         <%= link_to 'налаштувати',  edit_student_path(@student) %>
+    11:       </h1>
+    12:     </section>
+  
+app/views/students/show.html.erb:9:in `_app_views_students_show_html_erb__4265623771358703151_70049490921900'
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.5ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from status_code_with_paginate at /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/will_paginate-3.1.0/lib/will_paginate/railtie.rb:49)
+Started GET "/students/4" for 127.0.0.1 at 2017-04-10 11:31:33 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/brain209/chptcourses/app/views/students/show.html.erb:17: syntax error, unexpected keyword_else, expecting keyword_end
+/home/brain209/chptcourses/app/views/students/show.html.erb:22: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/brain209/chptcourses/app/views/students/show.html.erb:24: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/students/show.html.erb:17: syntax error, unexpected keyword_else, expecting keyword_end
+app/views/students/show.html.erb:22: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/students/show.html.erb:24: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.5ms)
+Started GET "/students/4" for 127.0.0.1 at 2017-04-10 11:31:50 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     6:       <h1>
+     7:         <%= gravatar_for current_user %>
+     8:         <p><%= @student.name %></p>
+     9:         <%if @student.group.name!=nil%>
+    10:         <p><%= @student.group.name %></p>
+    11:         <%else%>
+    12:         <%= link_to 'налаштувати',  edit_student_path(@student) %>
+  
+app/views/students/show.html.erb:9:in `_app_views_students_show_html_erb__4265623771358703151_70049148503920'
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.7ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from status_code_with_paginate at /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/will_paginate-3.1.0/lib/will_paginate/railtie.rb:49)
+Started GET "/students/4" for 127.0.0.1 at 2017-04-10 11:32:09 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students/4/edit" for 127.0.0.1 at 2017-04-10 11:32:14 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (3.5ms)
+  Rendered students/edit.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 60ms (Views: 56.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:32:17 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 78ms (Views: 67.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/students/2/edit" for 127.0.0.1 at 2017-04-10 11:32:25 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (5.6ms)
+  Rendered students/edit.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/students/2" for 127.0.0.1 at 2017-04-10 11:32:29 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SdvSfcRfu/Hylg0BS3GnNH+zdAPWhzfgqrOnlahJhpnRzeK7Qr0hGCvCDWYld3lvOBniouWOeJXu1Zo1ZP1zQQ==", "student"=>{"name"=>"Max Ivashchenko", "birthday(1i)"=>"2012", "birthday(2i)"=>"4", "birthday(3i)"=>"9", "education"=>"Черкаський політехнічний технікум", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Підтвердити", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "max@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "birthday" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["birthday", Mon, 09 Apr 2012], ["updated_at", 2017-04-10 08:32:29 UTC], ["id", 2]]
+  [1m[35m (45.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/2
+Completed 302 Found in 80ms (ActiveRecord: 47.5ms)
+
+
+Started GET "/students/2" for 127.0.0.1 at 2017-04-10 11:32:29 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students/2/edit" for 127.0.0.1 at 2017-04-10 11:32:31 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (9.0ms)
+  Rendered students/edit.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 79ms (Views: 70.0ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/students/2" for 127.0.0.1 at 2017-04-10 11:32:34 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"emx3+JcBSwAfV+tQLcmkCZT8qEpl2SetgB7IxXCJKRLiekc+EePR6cYD6zdDz3pS01Y+61bQaNjEePVlvD3cyg==", "student"=>{"name"=>"Max Ivashchenko", "birthday(1i)"=>"2007", "birthday(2i)"=>"4", "birthday(3i)"=>"9", "education"=>"Черкаський політехнічний технікум", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Підтвердити", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "max@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "users" SET "birthday" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["birthday", Mon, 09 Apr 2007], ["updated_at", 2017-04-10 08:32:34 UTC], ["id", 2]]
+  [1m[35m (56.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/2
+Completed 302 Found in 78ms (ActiveRecord: 59.1ms)
+
+
+Started GET "/students/2" for 127.0.0.1 at 2017-04-10 11:32:34 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 96ms (Views: 92.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/students/2/edit" for 127.0.0.1 at 2017-04-10 11:32:35 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (8.8ms)
+  Rendered students/edit.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 97ms (Views: 88.4ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/students/2" for 127.0.0.1 at 2017-04-10 11:32:37 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9SYdXbcF21Rst/+fASFJhRmLLmEQpDGXnlw6iad55WJtMC2bMedBvbXj//hvJ5feXiG4wCOtfuLaOgcpa80Qug==", "student"=>{"name"=>"Max Ivashchenko", "birthday(1i)"=>"2002", "birthday(2i)"=>"4", "birthday(3i)"=>"9", "education"=>"Черкаський політехнічний технікум", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Підтвердити", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "max@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "birthday" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["birthday", Tue, 09 Apr 2002], ["updated_at", 2017-04-10 08:32:37 UTC], ["id", 2]]
+  [1m[35m (49.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/2
+Completed 302 Found in 74ms (ActiveRecord: 51.5ms)
+
+
+Started GET "/students/2" for 127.0.0.1 at 2017-04-10 11:32:38 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 67ms (Views: 64.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students/2/edit" for 127.0.0.1 at 2017-04-10 11:32:38 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (9.4ms)
+  Rendered students/edit.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 101ms (Views: 87.3ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/students/2" for 127.0.0.1 at 2017-04-10 11:32:41 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g+RCEl4fbs9BeO8XIKEFRsIsly9fPio/Te7PndCQZx0b8nLU2P30Jpgs73BOp9sdhYYBjmw3ZUoJiPI9HCSSxQ==", "student"=>{"name"=>"Max Ivashchenko", "birthday(1i)"=>"1998", "birthday(2i)"=>"4", "birthday(3i)"=>"9", "education"=>"Черкаський політехнічний технікум", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Підтвердити", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "max@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "birthday" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["birthday", Thu, 09 Apr 1998], ["updated_at", 2017-04-10 08:32:41 UTC], ["id", 2]]
+  [1m[35m (50.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/2
+Completed 302 Found in 83ms (ActiveRecord: 53.3ms)
+
+
+Started GET "/students/2" for 127.0.0.1 at 2017-04-10 11:32:41 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 71ms (Views: 67.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/students/" for 127.0.0.1 at 2017-04-10 11:32:48 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 49ms (Views: 44.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/students/3" for 127.0.0.1 at 2017-04-10 11:32:51 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students/3/edit" for 127.0.0.1 at 2017-04-10 11:32:52 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (2.2ms)
+  Rendered students/edit.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:33:19 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 104ms (Views: 94.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/students/4" for 127.0.0.1 at 2017-04-10 11:33:22 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/students/3" for 127.0.0.1 at 2017-04-10 11:33:25 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 77ms (Views: 68.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/students/3/edit" for 127.0.0.1 at 2017-04-10 11:33:30 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (2.3ms)
+  Rendered students/edit.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/students/3" for 127.0.0.1 at 2017-04-10 11:33:34 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m0bgxxGaWgB/ThsPkd7e4HtUj4WXG2V8wbjuKybaSYMDUNABl3jA6aYaG2j/2AC7PP4ZJKQSKgmF3tOL6m68Ww==", "student"=>{"name"=>"Max Kozoriz", "birthday(1i)"=>"2012", "birthday(2i)"=>"4", "birthday(3i)"=>"10", "education"=>"CHPT", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Підтвердити", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "max_kozoriz@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "birthday" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["birthday", Tue, 10 Apr 2012], ["updated_at", 2017-04-10 08:33:34 UTC], ["id", 3]]
+  [1m[35m (57.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/3
+Completed 302 Found in 71ms (ActiveRecord: 59.9ms)
+
+
+Started GET "/students/3" for 127.0.0.1 at 2017-04-10 11:33:34 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students/3" for 127.0.0.1 at 2017-04-10 11:34:01 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/brain209/chptcourses/app/views/students/show.html.erb:18: syntax error, unexpected keyword_else, expecting keyword_end):
+  
+app/views/students/show.html.erb:18: syntax error, unexpected keyword_else, expecting keyword_end
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/brain209/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.2ms)
+Started GET "/students/3" for 127.0.0.1 at 2017-04-10 11:34:31 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 45.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-10 11:34:33 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/_logged_in_home.html.erb (2.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 67ms (Views: 62.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:34:35 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 101ms (Views: 93.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/students/3/edit" for 127.0.0.1 at 2017-04-10 11:34:43 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (5.3ms)
+  Rendered students/edit.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 53ms (Views: 44.6ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/students/3" for 127.0.0.1 at 2017-04-10 11:34:45 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S9wNOTvP493NFbPkqDFuPZMMxLbhSi512gaeu8edkdLTyj3/vS15NBRBs4PGN7Bm1KZSF9JDYQCeYKMbCylkCg==", "student"=>{"name"=>"Max Kozoriz", "birthday(1i)"=>"2007", "birthday(2i)"=>"4", "birthday(3i)"=>"10", "education"=>"CHPT", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Підтвердити", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "max_kozoriz@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "birthday" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["birthday", Tue, 10 Apr 2007], ["updated_at", 2017-04-10 08:34:45 UTC], ["id", 3]]
+  [1m[35m (38.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/3
+Completed 302 Found in 63ms (ActiveRecord: 40.9ms)
+
+
+Started GET "/students/3" for 127.0.0.1 at 2017-04-10 11:34:46 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 75ms (Views: 71.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:34:49 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/students/3/edit" for 127.0.0.1 at 2017-04-10 11:34:51 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (2.1ms)
+  Rendered students/edit.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students/3/edit" for 127.0.0.1 at 2017-04-10 11:35:20 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (18.4ms)
+  Rendered students/edit.html.erb within layouts/application (20.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 60ms (Views: 56.1ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/students/3" for 127.0.0.1 at 2017-04-10 11:35:30 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pqcOv3d0dTaZ0pDT1GVe5t/AwOszJ9qZ4mUM50dc1zA+sT558Zbv30CGkLS6Y4C9mGpWSgAuleymAzFHi+gi6A==", "student"=>{"name"=>"Max Kozoriz", "birthday"=>"1998-04-10", "education"=>"CHPT", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Підтвердити", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "max_kozoriz@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "birthday" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["birthday", Fri, 10 Apr 1998], ["updated_at", 2017-04-10 08:35:30 UTC], ["id", 3]]
+  [1m[35m (63.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/3
+Completed 302 Found in 75ms (ActiveRecord: 64.2ms)
+
+
+Started GET "/students/3" for 127.0.0.1 at 2017-04-10 11:35:30 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 82ms (Views: 77.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-10 11:35:38 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/_logged_in_home.html.erb (2.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 53ms (Views: 50.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:35:39 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 83ms (Views: 77.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/students/4/edit" for 127.0.0.1 at 2017-04-10 11:35:42 +0300
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_form.html.erb (3.3ms)
+  Rendered students/edit.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 54ms (Views: 46.7ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/students/4" for 127.0.0.1 at 2017-04-10 11:36:01 +0300
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lE8oaFsMNsmEwcKgpPeAiqZMSwYF/3Pujjo6VvrTDX0MWRiu3e6sIF2VwsfK8V7R4ebdpzb2PJvKXAf2Nmf4pQ==", "student"=>{"name"=>"Yura Konovalov", "birthday"=>"1998-12-07", "education"=>"CHPT", "activated"=>"1", "group_id"=>"1"}, "commit"=>"Підтвердити", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "yura@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "birthday" = ?, "education" = ?, "group_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["birthday", Mon, 07 Dec 1998], ["education", "CHPT"], ["group_id", 1], ["updated_at", 2017-04-10 08:36:01 UTC], ["id", 4]]
+  [1m[35m (68.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/4
+Completed 302 Found in 78ms (ActiveRecord: 69.2ms)
+
+
+Started GET "/students/4" for 127.0.0.1 at 2017-04-10 11:36:01 +0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 64ms (Views: 59.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-04-10 11:36:23 +0300
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  Rendered students/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ? AND "users"."admin" = ?[0m  [["activated", true], ["admin", false]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", false]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 40.3ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-04-10 11:36:34 +0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dWNX1rERC6zEPQKEAQ1uWqHG37+B/V8nEJCJQXuPw8PtdWcQN/ORRR1pAuNvC7AB5mxJHrL0EFJU9rThtzs2Gw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-10 11:36:34 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_not_logged_in_home.html.erb (1.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+

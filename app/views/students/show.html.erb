@@ -6,13 +6,16 @@
       <h1>
         <%= gravatar_for current_user %>
         <p><%= @student.name %></p>
+        <%if @student.group_id!=nil%>
         <p><%= @student.group.name %></p>
+        <%else%>
         <%= link_to 'налаштувати',  edit_student_path(@student) %>
+        <%end%>
       </h1>
     </section>
   </aside>
 </div>
 <% else%>
 <h2>Ваша заявка оброблюється. Ви ще не маєте доступу до профіля студента </h2>
-<%= link_to 'На головну', root_path %>
 <%end%>
+<%= link_to 'На головну', root_path %>
